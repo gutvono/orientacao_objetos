@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-public class Pessoa
+﻿public class Pessoa
 {
     public string nome;
     public string sobrenome;
     public string telefone;
     public string celular;
     public int idade;
+    public string sexo;
     public string email;
+    public double salario;
+    public DateOnly nascimento;
 
     public Pessoa()
     {
 
     }
 
-    public string DefinirNome()
+    public void DefinirNome(string nome)
     {
-        Console.Write("Informe o nome: ");
-        return Console.ReadLine();
+        this.nome = nome;
     }
 
-    public string DefinirSobrenome()
+    public void DefinirSobrenome(string sobrenome)
     {
-        Console.Write("Informe o sobrenome: ");
-        return Console.ReadLine();
+        this.sobrenome = sobrenome;
     }
 
     public void DefinirTelefone(string telefone)
@@ -40,9 +35,14 @@ public class Pessoa
         this.celular = celular;
     }
 
-    public int DefinirIdade()
+    public void DefinirIdade(int idade)
     {
-        return int.Parse(Console.ReadLine());
+        this.idade = idade;
+    }
+
+    public void DefinirSexo(string sexo)
+    {
+        this.sexo = sexo;
     }
 
     public void DefinirEmail(string email)
@@ -50,15 +50,26 @@ public class Pessoa
         this.email = email;
     }
 
-    public void MostrarDados()
+    public void DefinirSalario(double salario)
     {
-        Console.WriteLine("\n--------------------------------------------------------");
-        Console.WriteLine($"Este é o seu nome: {this.nome}");
-        Console.WriteLine($"Este é o seu sobrenome: {this.sobrenome}");
-        Console.WriteLine($"Este é o seu telefone: {this.telefone}");
-        Console.WriteLine($"Este é o seu celular: {this.celular}");
-        Console.WriteLine($"Este é a sua idade: {this.idade}");
-        Console.WriteLine($"Este é o seu email: {this.email}");
-        Console.WriteLine("--------------------------------------------------------\n");
+        this.salario = salario;
+    }
+
+    public void DefinirNascimento(DateOnly nascimento)
+    {
+        this.nascimento = nascimento;
+    }
+
+    public void ImprimirPessoa()
+    {
+        Console.WriteLine($"Nome: {this.nome}");
+        Console.WriteLine($"Sobrenome: {this.sobrenome}");
+        Console.WriteLine($"Telefone: {this.telefone}");
+        Console.WriteLine($"Celular: {this.celular}");
+        Console.WriteLine($"Idade: {this.idade}");
+        Console.WriteLine($"Sexo: {this.sexo}");
+        Console.WriteLine($"Email: {this.email}");
+        Console.WriteLine($"Salario: {this.salario}");
+        Console.WriteLine($"Nascimento: {this.nascimento}");
     }
 }
